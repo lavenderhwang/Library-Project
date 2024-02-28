@@ -1,0 +1,14 @@
+.book-card {
+	border: 1px solid red;
+	margin: 1rem;
+	text-align: center;
+}
+
+#new-book-form {
+	display: none;
+}
+
+.delete-button {
+	margin: 1px;
+	color: green;
+}
