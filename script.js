@@ -33,22 +33,34 @@ function displayBooksOnPage(index) {
 		var newCard = document.createElement('div');
 		newCard.classList.add('book-card');
 		libraryContainer.appendChild(newCard);
+		var bookCardInfo = document.createElement('div');
+		bookCardInfo.classList.add('bookCardInfo');
 
+		var cover = document.createElement('div');
 		var author = document.createElement('p');
 		var title = document.createElement('p');
 		var numPages = document.createElement('p');
 		var haveRead = document.createElement('button');
+		var deleteButton = document.createElement('img');
 
 		var deleteButton = document.createElement('button');
 		deleteButton.addEventListener('click', function (event) {
 			libraryContainer.removeChild(newCard);
 		});
 
-		newCard.appendChild(title);
-		newCard.appendChild(author);
-		newCard.appendChild(numPages);
-		newCard.appendChild(haveRead);
-		newCard.appendChild(deleteButton);
+		newCard.appendChild(cover);
+		cover.classList.add('cover');
+		newCard.appendChild(bookCardInfo);
+		bookCardInfo.appendChild(title);
+		title.classList.add('title');
+		bookCardInfo.appendChild(author);
+		author.classList.add('author');
+		bookCardInfo.appendChild(numPages);
+		numPages.classList.add('numPages');
+		bookCardInfo.appendChild(haveRead);
+		haveRead.classList.add('haveRead');
+		bookCardInfo.appendChild(deleteButton);
+		deleteButton.classList.add('deleteButton');
 
 		title.innerText = myLibrary[i].title;
 		author.innerText = myLibrary[i].author;
@@ -64,8 +76,6 @@ function displayBooksOnPage(index) {
 				haveRead.innerText = 'Not Read';
 			}
 		});
-
-		deleteButton.innerText = 'Delete';
 	}
 }
 

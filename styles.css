@@ -94,13 +94,61 @@ body {
 
 .library-container {
 	display: grid;
-	grid-template-columns: auto auto auto;
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 	gap: 2em;
 }
 
 .book-card {
 	padding: 1em;
 	border: 1px solid red;
-	height: 250px;
-	width: 200px;
+	height: 450px;
+	width: 325px;
+}
+
+/*BOOK CARD PROPERTIES*/
+
+.cover {
+	height: 75%;
+	width: 100%;
+	background-color: black;
+}
+
+.bookCardInfo {
+	border: 2px solid green;
+
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	grid-template-rows: auto;
+	grid-template-areas:
+		'title  numPages'
+		'author deleteButton';
+}
+
+.title {
+	font-size: 1.5em;
+	font-weight: bold;
+	color: red;
+	grid-area: 'title';
+}
+
+.author {
+	font-size: 1.3em;
+	font-weight: bold;
+	color: blue;
+	grid-area: 'author';
+}
+
+.numPages {
+	color: green;
+	grid-area: 'numPages';
+}
+.haveRead {
+	color: purple;
+	position: absolute;
+	display: none;
+}
+.deleteButton {
+	background-color: orange;
+	object-fit: cover;
+	grid-area: 'deleteButton';
 }
