@@ -8,28 +8,51 @@
 		<title>Library App</title>
 	</head>
 	<body>
-		<h1 class="heading">Library</h1>
+		<div class="banner">
+			<h1 class="heading">myBooks</h1>
 
-		<div class="library-container"></div>
+			<button type="button" id="new-book-button" onclick="showForm();">
+				+ Add Book
+			</button>
 
-		<button type="button" id="new-book-button" onclick="showForm();">
-			Add Book
-		</button>
-		<form id="new-book-form">
-			<label for="title">Title</label>
-			<input type="text" id="title" name="title" minlength="1" required />
-			<label for="author">Author</label>
-			<input type="text" id="author" name="author" minlength="1" required />
-			<label for="numPages">Total Number of Pages</label>
+			<div class="book-stats">
+				<p>Book Count:</p>
+				<p>Page Count:</p>
+			</div>
+		</div>
+
+		<form id="new-book-form" class="new-book-form">
+			<label for="title"></label>
+			<input
+				type="text"
+				id="title"
+				name="title"
+				minlength="1"
+				placeholder="Title"
+				required
+			/>
+			<label for="author"></label>
+			<input
+				type="text"
+				id="author"
+				name="title"
+				minlength="1"
+				placeholder="Author"
+				required
+			/>
+			<label for="numPages"></label>
 			<input
 				type="number"
 				id="numPages"
 				name="numPages"
 				minlength="1"
+				placeholder="Pages"
 				required
 			/>
-			<label for="haveRead">Have You Read This Book?</label>
-			<input type="checkbox" id="haveRead" name="haveRead" />
+			<div class="haveReadContainer">
+				<label for="haveRead">Have You Read This Book?</label>
+				<input type="checkbox" id="haveRead" name="haveRead" />
+			</div>
 
 			<input
 				id="submitButton"
@@ -38,5 +61,6 @@
 				requSuired
 			/>
 		</form>
+		<div class="library-container"></div>
 	</body>
 </html>

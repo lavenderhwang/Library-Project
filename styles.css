@@ -1,18 +1,106 @@
-.book-card {
-	border: 1px solid red;
-	margin: 1rem;
-	text-align: center;
+.tester {
+	background-color: red;
 }
 
-#new-book-form {
-	display: none;
-}
-
-.delete-button {
-	margin: 1px;
-	color: green;
+* {
+	font-family: Arial, Helvetica, sans-serif;
+	box-sizing: border-box;
 }
 
 body {
-	background-color: green;
+	background-color: #f6f6f6;
+	margin: 1.5em 3em;
+}
+
+.banner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.banner .heading {
+	font-size: 2.3em;
+}
+
+#new-book-button {
+	background-color: #dfdfdf;
+	border-radius: 2em;
+	font-weight: bold;
+	font-size: 1em;
+	padding: 1em 3em;
+	border: none;
+	text-align: center;
+}
+
+.book-stats {
+	font-weight: bold;
+	margin-right: 5%;
+}
+
+#new-book-button:hover {
+	background-color: #d5d4d4;
+}
+
+.new-book-form {
+	display: none;
+}
+
+.show-form {
+	display: flex;
+	flex-direction: column;
+	font-size: 1.3em;
+	gap: 0.5em;
+}
+
+/*MODAL BOX*/
+.show-form {
+	width: 400px;
+	background: #dfdfdf;
+	border-radius: 1.5em;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	padding: 1em;
+}
+
+.show-form input,
+.haveReadContainer {
+	border-radius: 1em;
+	padding: 1em;
+	border: none;
+	font-size: 1em;
+}
+
+.haveReadContainer {
+	display: flex;
+	align-items: center;
+	gap: 1em;
+}
+
+.show-form #haveRead {
+	height: 1em;
+	width: 1em;
+}
+
+.show-form #submitButton {
+	background-color: rgba(116, 186, 27, 0.34);
+}
+
+.show-form #submitButton:hover {
+	background-color: rgba(116, 186, 27, 0.54);
+}
+
+.library-container {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	gap: 2em;
+}
+
+.book-card {
+	padding: 1em;
+	border: 1px solid red;
+	height: 250px;
+	width: 200px;
 }

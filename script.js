@@ -54,8 +54,10 @@ function displayBooksOnPage(index) {
 		author.innerText = myLibrary[i].author;
 		numPages.innerText = myLibrary[i].numPages;
 		haveRead.innerText = myLibrary[i].haveRead;
+
 		haveRead.addEventListener('click', () => {
 			myLibrary[i].haveRead = !myLibrary[i].haveRead;
+
 			if (myLibrary[i].haveRead) {
 				haveRead.innerText = 'Read';
 			} else {
@@ -68,7 +70,7 @@ function displayBooksOnPage(index) {
 }
 
 function showForm() {
-	document.getElementById('new-book-form').style.display = 'block';
+	document.getElementById('new-book-form').classList.add('show-form');
 }
 
 //connect the user input in the form to a new card
@@ -99,7 +101,9 @@ submitForm.addEventListener('click', () => {
 		console.log(newBook);
 
 		document.getElementById('new-book-form').reset();
-		document.getElementById('new-book-form').style.cssText = 'display: none;';
+		document
+			.getElementById('new-book-form')
+			.classList.replace('show-form', 'new-book-form');
 	} else {
 		console.log('hi');
 	}
