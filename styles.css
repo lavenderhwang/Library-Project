@@ -71,6 +71,7 @@ body {
 	padding: 1em;
 	border: none;
 	font-size: 1em;
+	outline: none;
 }
 
 .haveReadContainer {
@@ -93,62 +94,63 @@ body {
 }
 
 .library-container {
+	margin-top: 2em;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	gap: 2em;
 }
 
 .book-card {
 	padding: 1em;
-	border: 1px solid red;
-	height: 450px;
-	width: 325px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1em;
+	background-color: #dfdfdf;
+	border-radius: 2em;
 }
 
 /*BOOK CARD PROPERTIES*/
 
-.cover {
-	height: 75%;
-	width: 100%;
-	background-color: black;
-}
-
-.bookCardInfo {
-	border: 2px solid green;
-
-	display: grid;
-	grid-template-columns: 2fr 1fr;
-	grid-template-rows: auto;
-	grid-template-areas:
-		'title  numPages'
-		'author deleteButton';
-}
-
 .title {
-	font-size: 1.5em;
 	font-weight: bold;
-	color: red;
-	grid-area: 'title';
+	font-size: 1.7em;
+	margin: 0;
 }
 
 .author {
-	font-size: 1.3em;
-	font-weight: bold;
-	color: blue;
-	grid-area: 'author';
+	font-weight: 400;
+	font-size: 1.5em;
+	margin: 0;
 }
 
 .numPages {
-	color: green;
-	grid-area: 'numPages';
+	font-size: 1.2em;
+	margin: 0;
 }
-.haveRead {
-	color: purple;
-	position: absolute;
-	display: none;
+
+.buttonContainer {
+	display: flex;
+	gap: 1em;
 }
+
+.haveRead,
 .deleteButton {
-	background-color: orange;
-	object-fit: cover;
-	grid-area: 'deleteButton';
+	margin: 0;
+	padding: 1em 3em;
+	border-radius: 2em;
+	border: none;
+}
+
+.haveRead:hover {
+	background-color: #d5d4d4;
+}
+
+.deleteButton {
+	background-color: rgb(236, 154, 154);
+}
+
+.deleteButton:hover {
+	background-color: rgb(216, 116, 116);
 }

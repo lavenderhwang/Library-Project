@@ -33,38 +33,34 @@ function displayBooksOnPage(index) {
 		var newCard = document.createElement('div');
 		newCard.classList.add('book-card');
 		libraryContainer.appendChild(newCard);
-		var bookCardInfo = document.createElement('div');
-		bookCardInfo.classList.add('bookCardInfo');
 
-		var cover = document.createElement('div');
 		var author = document.createElement('p');
 		var title = document.createElement('p');
 		var numPages = document.createElement('p');
+		var buttonContainer = document.createElement('div');
 		var haveRead = document.createElement('button');
-		var deleteButton = document.createElement('img');
-
 		var deleteButton = document.createElement('button');
+
 		deleteButton.addEventListener('click', function (event) {
 			libraryContainer.removeChild(newCard);
 		});
 
-		newCard.appendChild(cover);
-		cover.classList.add('cover');
-		newCard.appendChild(bookCardInfo);
-		bookCardInfo.appendChild(title);
+		newCard.appendChild(title);
 		title.classList.add('title');
-		bookCardInfo.appendChild(author);
+		newCard.appendChild(author);
 		author.classList.add('author');
-		bookCardInfo.appendChild(numPages);
+		newCard.appendChild(numPages);
 		numPages.classList.add('numPages');
-		bookCardInfo.appendChild(haveRead);
+		buttonContainer.appendChild(haveRead);
 		haveRead.classList.add('haveRead');
-		bookCardInfo.appendChild(deleteButton);
+		buttonContainer.appendChild(deleteButton);
 		deleteButton.classList.add('deleteButton');
+		newCard.appendChild(buttonContainer);
+		buttonContainer.classList.add('buttonContainer');
 
 		title.innerText = myLibrary[i].title;
 		author.innerText = myLibrary[i].author;
-		numPages.innerText = myLibrary[i].numPages;
+		numPages.innerText = myLibrary[i].numPages + ' pages';
 		haveRead.innerText = myLibrary[i].haveRead;
 
 		haveRead.addEventListener('click', () => {
@@ -76,6 +72,8 @@ function displayBooksOnPage(index) {
 				haveRead.innerText = 'Not Read';
 			}
 		});
+
+		deleteButton.innerText = 'Delete';
 	}
 }
 
