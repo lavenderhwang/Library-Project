@@ -26,13 +26,20 @@ function addBookToLibrary(book) {
 
 var libraryContainer = document.querySelector('.library-container');
 
+var bookCount = 0;
+var pageCount = 0;
+
+var bookCountDisp = document.querySelector('.book-count');
+var pageCountDisp = document.querySelector('.page-count');
+
 //Loops Through Library and Displays Book
 function displayBooksOnPage(index) {
-	console.log(myLibrary.length);
 	for (let i = index; i < myLibrary.length; i++) {
 		var newCard = document.createElement('div');
 		newCard.classList.add('book-card');
 		libraryContainer.appendChild(newCard);
+		bookCount++;
+		console.log(bookCount);
 
 		var author = document.createElement('p');
 		var title = document.createElement('p');
@@ -43,7 +50,11 @@ function displayBooksOnPage(index) {
 
 		deleteButton.addEventListener('click', function (event) {
 			libraryContainer.removeChild(newCard);
+			bookCount--;
+			bookCountDisp.innerText = 'Book Count: ' + bookCount;
 		});
+
+		bookCountDisp.innerText = 'Book Count: ' + bookCount;
 
 		newCard.appendChild(title);
 		title.classList.add('title');
