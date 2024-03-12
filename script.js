@@ -48,13 +48,7 @@ function displayBooksOnPage(index) {
 		var haveRead = document.createElement('button');
 		var deleteButton = document.createElement('button');
 
-		deleteButton.addEventListener('click', function (event) {
-			libraryContainer.removeChild(newCard);
-			bookCount--;
-			bookCountDisp.innerText = 'Book Count: ' + bookCount;
-		});
-
-		bookCountDisp.innerText = 'Book Count: ' + bookCount;
+		bookCountDisp.innerText = bookCount;
 
 		newCard.appendChild(title);
 		title.classList.add('title');
@@ -71,8 +65,11 @@ function displayBooksOnPage(index) {
 
 		title.innerText = myLibrary[i].title;
 		author.innerText = myLibrary[i].author;
-		numPages.innerText = myLibrary[i].numPages + ' pages';
+		numPages.innerText = Math.round(myLibrary[i].numPages) + ' pages';
+		pageCount += Math.round(myLibrary[i].numPages);
 		haveRead.innerText = myLibrary[i].haveRead;
+
+		pageCountDisp.innerText = pageCount;
 
 		haveRead.addEventListener('click', () => {
 			myLibrary[i].haveRead = !myLibrary[i].haveRead;
@@ -85,6 +82,13 @@ function displayBooksOnPage(index) {
 		});
 
 		deleteButton.innerText = 'Delete';
+		deleteButton.addEventListener('click', function (event) {
+			libraryContainer.removeChild(newCard);
+			bookCount--;
+			bookCountDisp.innerText = 'Book Count: ' + bookCount;
+			pageCount -= Math.round(myLibrary[i].numPages);
+			pageCountDisp.innerText = 'Page Count: ' + pageCount;
+		});
 	}
 }
 
