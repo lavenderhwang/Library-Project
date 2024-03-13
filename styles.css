@@ -1,12 +1,24 @@
+:root {
+	--beige: #faeee7;
+	--pink: #ffc6c7;
+	--pinkhover: #e9a6a7;
+	--darkpink: #ff8ba7;
+	--green: #c3f0ca;
+	--greenhover: #a4d4ab;
+	--brown: #33272a;
+	--brownhover: #231a1c;
+}
+
 * {
 	font-family: Arial, Helvetica, sans-serif;
 	box-sizing: border-box;
+	margin: 0;
 }
 
 body {
-	color: #33272a;
-	background-color: #fffffe;
-	margin: 1.5em 3em;
+	color: var(--brown);
+	background-color: var(--beige);
+	margin: 2em 3em;
 }
 
 .banner {
@@ -16,14 +28,18 @@ body {
 }
 
 .banner .heading {
-	font-size: 2.3em;
+	font-size: 3em;
 }
 
 #new-book-button {
-	background-color: #dfdfdf;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%);
+	background-color: var(--brown);
+	color: var(--beige);
 	border-radius: 2em;
 	font-weight: bold;
-	font-size: 1em;
+	font-size: 1.2em;
 	padding: 1em 3em;
 	border: none;
 	text-align: center;
@@ -31,10 +47,12 @@ body {
 
 .book-stats {
 	font-weight: bold;
+	font-size: 1.2em;
 }
 
 #new-book-button:hover {
-	background-color: #d5d4d4;
+	background-color: var(--brownhover);
+	cursor: pointer;
 }
 
 .new-book-form {
@@ -51,8 +69,7 @@ body {
 /*MODAL BOX*/
 .show-form {
 	width: 400px;
-	background-color: #fec5d2;
-
+	background-color: var(--brown);
 	border-radius: 1.5em;
 	position: absolute;
 	top: 50%;
@@ -75,6 +92,7 @@ body {
 	display: flex;
 	align-items: center;
 	gap: 1em;
+	color: var(--beige);
 }
 
 .show-form #haveRead {
@@ -82,12 +100,17 @@ body {
 	width: 1em;
 }
 
+input[type='checkbox'] {
+	accent-color: var(--darkpink);
+}
+
 .show-form #submitButton {
-	background-color: #c3f0ca;
+	background-color: var(--green);
 }
 
 .show-form #submitButton:hover {
-	background-color: #a9d1af;
+	background-color: var(--greenhover);
+	cursor: pointer;
 }
 
 .library-container {
@@ -98,13 +121,15 @@ body {
 }
 
 .book-card {
-	padding: 1em;
+	padding: 3em 2em;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: 1em;
 	background-color: #dfdfdf;
+	gap: 0.5em;
+	color: var(--beige);
+	background-color: var(--brown);
 	border-radius: 2em;
 }
 
@@ -113,18 +138,16 @@ body {
 .title {
 	font-weight: bold;
 	font-size: 1.7em;
-	margin: 0;
 }
 
 .author {
 	font-weight: 400;
 	font-size: 1.5em;
-	margin: 0;
 }
 
 .numPages {
 	font-size: 1.2em;
-	margin: 0;
+	margin-bottom: 0.5em;
 }
 
 .buttonContainer {
@@ -139,16 +162,57 @@ body {
 	border-radius: 2em;
 	border: none;
 	height: 4em;
+	font-weight: bold;
+}
+
+.haveRead {
+	background-color: var(--green);
+	color: var(--brown);
 }
 
 .haveRead:hover {
-	background-color: #d5d4d4;
+	background-color: var(--greenhover);
+	cursor: pointer;
 }
 
 .deleteButton {
-	background-color: rgb(236, 154, 154);
+	background-color: var(--pink);
 }
 
 .deleteButton:hover {
-	background-color: rgb(216, 116, 116);
+	background-color: var(--pinkhover);
+	cursor: pointer;
+}
+
+footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	font-size: 1.2em;
+	color: var(--brown);
+	font-weight: bold;
+	padding: 0.7em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5em;
+}
+
+.github-link:hover {
+	cursor: pointer;
+	color: var(--brownhover);
+}
+
+.github-mark {
+	width: 30px;
+	height: 30px;
+}
+
+.book-graphic {
+	position: absolute;
+	color: var(--darkpink);
+	width: 100px;
+	height: 100px;
+	transform: rotate(70deg);
 }
